@@ -4,6 +4,17 @@
     white-space: nowrap;
     font-weight: bold;
 }
+
+.hapdash-chat .hapdash-chat-item {
+    max-width: 90vw;
+}
+
+.hapdash-chat .hapdash-chat-item p {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .hapdash-chat .hapdash-chat-bubble.type-event a {
     color: #d3ffff;
     font-weight: normal;
