@@ -29,5 +29,5 @@ Tampermonkey does the same, but for Javascript, to modify functionality.
 5. **SAVE**
 6. Install Tampermonkey
 7. Create a new script, with name "_HappyChat Transcripts_"
-8. Paste the contents of **tampermonkey.js** into the code field
+8. Paste the contents of **mc-chat-transcripts.user.js** into the code field
 9. **SAVE**
