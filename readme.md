@@ -4,6 +4,7 @@
 - chat bubbles looks a bit more clear
 - removes all English-to-English i8n and just shows the message once
 - user notes left by HE stand out more
+- collapses SSR on load for Woo chats
 
 
 ## REQUIREMENTS:
