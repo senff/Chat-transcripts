@@ -9,10 +9,12 @@
     max-width: 90vw;
 }
 
-.hapdash-chat .hapdash-chat-item p {
+.hapdash-chat .hapdash-chat-item p a {
     max-width: 100%;
+    display: block;
     overflow: hidden;
     text-overflow: ellipsis;
+    width: 90%;
 }
 
 .hapdash-chat .hapdash-chat-bubble.type-event a {
@@ -43,10 +45,11 @@
     -o-transform:rotate(1deg);
     -moz-transform:rotate(1deg);
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .hapdash-chat .hapdash-chat-bubble.type-event.HEnote a {
-   color: #000000;
+    color: #000000;
 }
 
 .hapdash-chat .hapdash-chat-bubble.type-event {
