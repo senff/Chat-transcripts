@@ -109,3 +109,18 @@
 .hapdash-chat .hapdash-chat-bubble.type-message.chat-MessageToOperator + .hapdash-chat-meta {
     margin: 3px 0 0 60px;
 }
+
+.link-bubble p {
+    text-align:center; 
+    font-size:20px;
+}
+
+.link-bubble p a.show-ssr-transcript {
+    width: 100%;
+}
+
+.ssr-message > p {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+    font-size: 12px;
+    color: #000000;
+}
