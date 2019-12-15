@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Happychat Transcript Optimizer
 // @namespace    https://github.com/senff/Chat-transcripts
-// @version      1.2
+// @version      1.3
 // @description  Makes links clickable, stylizes chat bubbles, removes English-to-English i8n, styles user notes and collapses Woo SSRs on load
 // @author       Senff
 // @require      https://code.jquery.com/jquery-1.12.4.js
@@ -45,11 +45,11 @@ function highlightNotes() {
 }
 
 function collapseSSR() {
-    // Collapse the entire SSR on page load
+    // Collapse the entire SSR
     $('.hapdash-chat .hapdash-chat-bubble.type-message.chat-MessageToOperator').each(function(){
         var messageContents = $(this).find('p:nth-of-type(1)').html();
         if(messageContents.startsWith("Website Status Report")) {
-           $(this).find('div:nth-of-type(1)').after('<div class="link-bubble"><p style="text-align:center; font-size:20px;"><a href="#" class="show-ssr-transcript" onClick="return false;">CLICK HERE TO SHOW SSR</a></p></div>');
+           $(this).find('div:nth-of-type(1)').after('<div class="link-bubble"><p><a href="#" class="show-ssr-transcript" onClick="return false;">CLICK HERE TO SHOW SSR</a></p></div>');
            $(this).find('div:nth-of-type(1)').addClass('ssr-message').hide();
            }
     });
