@@ -32,3 +32,6 @@ Tampermonkey does the same, but for Javascript, to modify functionality.
 7. Create a new script, with name "_HappyChat Transcripts_"
 8. Paste the contents of **mc-chat-transcripts.user.js** into the code field
 9. **SAVE**
+
+## MORE INFORMATION:
+https://heinvestigations.wordpress.com/2019/01/14/happy-suite-of-happiness-hacks/
