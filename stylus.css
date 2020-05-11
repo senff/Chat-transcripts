@@ -1,10 +1,10 @@
 .hapdash-chat-bubble div a {
     color: white;
     text-decoration: underline;
-    white-space: nowrap;
     font-weight: bold;
 }
 
+/*
 .hapdash-chat .hapdash-chat-item {
     max-width: 90vw;
 }
@@ -16,6 +16,7 @@
     text-overflow: ellipsis;
     width: 90%;
 }
+*/
 
 .hapdash-chat .hapdash-chat-bubble.type-event a {
     color: #d3ffff;
@@ -50,6 +51,28 @@
 
 .hapdash-chat .hapdash-chat-bubble.type-event.HEnote a {
     color: #000000;
+}
+
+.hapdash-chat .hapdash-chat-bubble.type-event.HEnote + .hapdash-chat-meta {
+    opacity: 1;
+    max-width: 600px;
+    text-align: right;
+    margin: -5px auto 20px;
+    -webkit-transform: rotate(1deg);
+    -o-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+}
+
+.hapdash-chat .hapdash-chat-bubble.type-event.HEnote + .hapdash-chat-meta .chat-person {
+    font-weight: bold;
+}
+
+.hapdash-chat .hapdash-chat-bubble.type-event.HEnote + .hapdash-chat-meta .chat-timestamp::before {
+    content:" (";
+}
+
+.hapdash-chat .hapdash-chat-bubble.type-event.HEnote + .hapdash-chat-meta .chat-timestamp::after {
+    content:")";
 }
 
 .hapdash-chat .hapdash-chat-bubble.type-event {
