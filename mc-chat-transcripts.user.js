@@ -48,7 +48,7 @@ function collapseSSR() {
     // Collapse the entire SSR
     $('.hapdash-chat .hapdash-chat-bubble.type-message.chat-MessageToOperator').each(function(){
         var messageContents = $(this).find('p:nth-of-type(1)').html();
-        if(messageContents.startsWith("Website Status Report")) {
+        if(messageContents.startsWith("Website Status Report") || messageContents.startsWith("System Status Report")) {
            $(this).find('div:nth-of-type(1)').after('<div class="link-bubble"><p><a href="#" class="show-ssr-transcript" onClick="return false;">CLICK HERE TO SHOW SSR</a></p></div>');
            $(this).find('div:nth-of-type(1)').addClass('ssr-message').hide();
            }
