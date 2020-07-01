@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Happychat Transcript Optimizer
 // @namespace    https://github.com/senff/Chat-transcripts
-// @version      1.3
+// @version      1.31
 // @description  Makes links clickable, stylizes chat bubbles, removes English-to-English i8n, styles user notes and collapses Woo SSRs on load
 // @author       Senff
 // @require      https://code.jquery.com/jquery-1.12.4.js
