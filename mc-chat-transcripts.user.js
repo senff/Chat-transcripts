@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Happychat Transcript Optimizer
 // @namespace    https://github.com/senff/Chat-transcripts
-// @version      1.31
-// @description  Makes links clickable, stylizes chat bubbles, removes English-to-English i8n, styles user notes and collapses Woo SSRs on load
+// @version      1.4
+// @description  Makes links clickable, stylizes chat bubbles, removes English-to-English i8n, styles user notes, collapses Woo SSRs on load, and displays Droplr & Snipboard screenshot images
 // @author       Senff
 // @require      https://code.jquery.com/jquery-1.12.4.js
 // @match        https://mc.a8c.com/support-stats/happychat/*
@@ -13,13 +13,30 @@
 var $ = window.jQuery;
 
 function url2links() {
-    $('#transcript .hapdash-chat-bubble div p').each(function(){
+    $('#transcript .hapdash-chat-bubble div p').each(function () {
         var str = $(this).html();
-        // var regex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/i;
-        var regex = /(\b(https?|):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+        var regexlink = /(\b(https?|):\/\/(?!d.pr\/)(?!snipboard.io\/)[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig; // Default links
         // Replace plain text links by hyperlinks
-        var replaced_text = str.replace(regex, "<a href='$1' target='_blank'>$1</a>");
+        var replaced_text = str.replace(regexlink, "<a href='$1' target='_blank'>$1</a>");
         $(this).html(replaced_text);
+    });
+}
+
+function droplrEmbed() {
+    $('#transcript .hapdash-chat-bubble div p').each(function () {
+        var str = $(this).html();
+        var regexdroplr = /(\b(https?|):\/\/(\bd\.pr)[-A-Z0-9+&@#\/%=~._|]*)/ig; // Droplr links
+        var replaced_droplr = str.replace(regexdroplr, "<a href='$1' target='_blank'><img src='$1+' style='margin: 20px 0 0 0; max-width:90%; background: #e0e0e0; border: solid 1px #000000;'></a><br>Full size: <a href='$1' target='_blank'>$1</a>");
+        $(this).html(replaced_droplr);
+    });
+}
+
+function snipBoardEmbed() {
+    $('#transcript .hapdash-chat-bubble div p').each(function () {
+        var str = $(this).html();
+        var regexsnipboard = /(\b(https?|):\/\/(\bsnipboard\.io)[-A-Z0-9+&@#\/%=~._|]*)/ig; // Snipboard links
+        var replaced_snipboard = str.replace(regexsnipboard, "<a href='$1' target='_blank'><img src='$1' style='margin: 20px 10px 0 0; max-width:90%; background: #e0e0e0; border: solid 1px #000000;'></a><br>Full size: <a href='$1' target='_blank'>$1</a>");
+        $(this).html(replaced_snipboard);
     });
 }
 
@@ -57,6 +74,8 @@ function collapseSSR() {
 
 $(document).ready(function() {
    url2links();
+   droplrEmbed();
+   snipBoardEmbed();
    removeEnglishTranslation();
    highlightNotes();
    collapseSSR();

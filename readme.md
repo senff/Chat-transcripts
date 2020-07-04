@@ -5,6 +5,7 @@
 - removes all English-to-English i8n and just shows the message once
 - user notes left by HE stand out more
 - collapses SSR on load for Woo chats
+- displays Droplr & Snipboard screenshot images
 
 
 ## REQUIREMENTS:
