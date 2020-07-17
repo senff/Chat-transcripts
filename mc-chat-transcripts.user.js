@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Happychat Transcript Optimizer
 // @namespace    https://github.com/senff/Chat-transcripts
-// @version      1.4
+// @version      1.41
 // @description  Makes links clickable, stylizes chat bubbles, removes English-to-English i8n, styles user notes, collapses Woo SSRs on load, and displays Droplr & Snipboard screenshot images
 // @author       Senff
 // @require      https://code.jquery.com/jquery-1.12.4.js
@@ -34,7 +34,7 @@ function droplrEmbed() {
 function snipBoardEmbed() {
     $('#transcript .hapdash-chat-bubble div p').each(function () {
         var str = $(this).html();
-        var regexsnipboard = /(\b(https?|):\/\/(\bsnipboard\.io)[-A-Z0-9+&@#\/%=~._|]*)/ig; // Snipboard links
+        var regexsnipboard = /(\b(https?|):\/\/(\bsnipboard\.io\/)[^ ][-A-Z0-9+&@#\/%=~._|]*)/ig; // Snipboard links
         var replaced_snipboard = str.replace(regexsnipboard, "<a href='$1' target='_blank'><img src='$1' style='margin: 20px 10px 0 0; max-width:90%; background: #e0e0e0; border: solid 1px #000000;'></a><br>Full size: <a href='$1' target='_blank'>$1</a>");
         $(this).html(replaced_snipboard);
     });
